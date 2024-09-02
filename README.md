@@ -5,33 +5,25 @@ React Native, Expo, MongoDB, Realm
 - Build/Run on iOS 🍎
 ```
 
+Install dependensies.
+
+```
 yarn ios
 
 ```
+
+Run ios device
 
 ```
 
 npx expo run:ios
 
 ```
+
 ## 💻 Start the Dev Client
 
 ```
 
 expo start --dev-client
-
-```
-
-```
-
-yarn start
-
-```
-
-```
-
-npm run start
-
-```
 
 ```
