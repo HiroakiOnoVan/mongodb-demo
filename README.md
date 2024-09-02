@@ -1,4 +1,4 @@
-React Native, Expo, MongoDB, Realm
+This is a demo app of React Native, Expo, MongoDB, Atlas and Realm.
 
 ```
 ## How to build and run locally
