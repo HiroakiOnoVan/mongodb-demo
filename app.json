@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "AtlasDeviceSdkApp",
+    "slug": "AtlasDeviceSdkApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.hiroakiono.AtlasDeviceSdkApp"
+    }
+  }
+}
