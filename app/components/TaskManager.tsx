@@ -1,20 +1,20 @@
-import React, {useCallback} from 'react';
-import {View, StyleSheet, Switch, Text} from 'react-native';
+import React, { useCallback } from "react";
+import { View, StyleSheet, Switch, Text } from "react-native";
 
-import {Task} from '../models/Task';
-import {IntroText} from './IntroText';
-import {AddTaskForm} from './AddTaskForm';
-import TaskList from './TaskList';
+import { Task } from "../models/Task";
+import { IntroText } from "./IntroText";
+import { AddTaskForm } from "./AddTaskForm";
+import TaskList from "./TaskList";
 
-import {useRealm} from '@realm/react';
-import {shadows} from '../styles/shadows';
+import { useRealm } from "@realm/react";
+import { shadows } from "../styles/shadows";
 
 export const TaskManager: React.FC<{
   tasks: Realm.Results<Task & Realm.Object>;
   userId?: string;
   setShowDone: (showDone: boolean) => void;
   showDone: boolean;
-}> = ({tasks, userId, setShowDone, showDone}) => {
+}> = ({ tasks, userId, setShowDone, showDone }) => {
   const realm = useRealm();
 
   const handleAddTask = useCallback(
@@ -30,14 +30,16 @@ export const TaskManager: React.FC<{
       // may occasionally be online during short time spans we want to increase the probability
       // of sync participants to successfully sync everything in the transaction, otherwise
       // no changes propagate and the transaction needs to start over when connectivity allows.
+      console.log(description);
       realm.write(() => {
         return realm.create(Task, {
           description,
-          userId: userId ?? 'SYNC_DISABLED',
+          userId: "66d60760018fb02f7825e2f8",
+          // userId: userId ?? 'SYNC_DISABLED',
         });
       });
     },
-    [realm, userId],
+    [realm, userId]
   );
 
   const handleToggleTaskStatus = useCallback(
@@ -61,7 +63,7 @@ export const TaskManager: React.FC<{
       //   task.isComplete = !task.isComplete;
       // });
     },
-    [realm],
+    [realm]
   );
 
   const handleDeleteTask = useCallback(
@@ -73,7 +75,7 @@ export const TaskManager: React.FC<{
         // realm?.delete(realm?.objectForPrimaryKey('Task', id));
       });
     },
-    [realm],
+    [realm]
   );
 
   return (
@@ -105,8 +107,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   switchPanel: {
-    flexDirection: 'row',
-    backgroundColor: '#fff',
+    flexDirection: "row",
+    backgroundColor: "#fff",
     padding: 10,
     borderRadius: 5,
     marginHorizontal: 10,
